@@ -1,0 +1,17 @@
+h5{
+  margin: 4rem 0 2rem 0;
+}
+.bg {
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  background-size: cover;
+}
+.explore {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    margin: 5rem auto 0 auto;
+    line-height: 150px;
+    font-size: 30px;
+}
