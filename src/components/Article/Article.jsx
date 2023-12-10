@@ -1,3 +1,4 @@
+import React from 'react';
 const Article = ({ planet, jobRole, name, content }) => {
   const style = {
     margin: '1.5rem 0'
