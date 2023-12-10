@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/SPACE-TOURISM/",
   plugins: [react()],
-  base: "/SPACE-TOURISM",
 })
