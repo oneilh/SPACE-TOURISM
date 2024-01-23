@@ -4,18 +4,22 @@
   flex-direction: column;
   justify-content: space-around;
 }
-
-.sub__cont_1 {
+.header{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+.sub__cont_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .explore {
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
-  background-color: var(--color-Heading);
+  background-color: var(--txt-heading);
   color: var(--color-1);
   line-height: 10rem;
   font-size: 30px;

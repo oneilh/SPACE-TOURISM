@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import svgr from "vite-plugin-svgr";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/SPACE-TOURISM/",
-  plugins: [react()],
+  // base: "/SPACE-TOURISM/",
+  base: './',
+  plugins: [react(), svgr()],
 })

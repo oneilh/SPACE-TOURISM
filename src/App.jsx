@@ -1,23 +1,39 @@
-import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/home/home";
-import Navbar from "./components/Nav/Navbar";
-import backgroundImage from "./assets/home/background-home-mobile.jpg";
+
+import Home from "./pages/home/Home";
+import Error from "./pages/Error";
+import Layout from "./components/Layout";
+import Destination from "./pages/destination/Destination";
+import { BackgroundContext } from "./context/MyContext";
+import { useState } from "react";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <Error />,
+    children: [
+      {
+        // path: "/SPACE-TOURISM/",
+        // or
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "destination",
+        element: <Destination />,
+      },
+    ],
+  },
+]);
 
 function App() {
+  const [url, setUrl]= useState('')
   return (
-    <div className="bg-image"
-      style={{
-        backgroundImage: `url(
-            ${backgroundImage}
-          )`,
-      }}
-    >
-      <div className="container">
-        <Navbar />
-        <Home />
-      </div>
-    </div>
+    <BackgroundContext.Provider value={{url, setUrl}}>
+      <RouterProvider router={router} />
+    </BackgroundContext.Provider>
   );
 }
 

@@ -1,11 +1,13 @@
-import { HamburgerIcon, LogoIcon } from "../../assets/shared/Icons";
+import { Link } from "react-router-dom";
+import  LogoIcon from "../../assets/shared/logo.svg?react";
+import  HamburgerIcon from "../../assets/shared/hamburger.svg?react";
 
 const Navbar = () => {
   return (
     <nav>
-      <div className="clickable">
+      <Link className="clickable" to='/'>
         <LogoIcon />
-      </div>
+      </Link>
       <div style={{ alignSelf: "center" }} className="clickable">
         <HamburgerIcon />
       </div>

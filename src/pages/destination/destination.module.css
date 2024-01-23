@@ -1,0 +1,7 @@
+.destination{
+    display: flex;
+    flex-direction: column;
+}
+.extra{
+    border-top: 2px solid rgb(31, 31, 46);
+}
