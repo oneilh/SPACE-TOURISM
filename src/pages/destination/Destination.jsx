@@ -3,53 +3,79 @@ import { BackgroundContext } from "../../context/MyContext";
 import Styles from "./destination.module.css";
 import backgroundImage from "../../assets/destination/background-destination-mobile.jpg";
 import { destinations } from "../../data/db.json";
-import Article from "../../components/Article/Article";
+import Title from "../../components/Title";
 
 const Destination = () => {
   const { setUrl } = useContext(BackgroundContext);
+  const [planetName, setPlanetName] = useState("Moon");
+  const [activePlanet, setActivePlanet] = useState({});
+
   useEffect(() => {
     setUrl(backgroundImage);
-  }, [backgroundImage]);
+  }, []);
 
-  const [planetName, setplanetName] = useState("");
+  useEffect(() => {
+    const selectedPlanet = destinations.filter((desc) => {
+      const { name } = desc;
+      return planetName == name;
+    });
+    setActivePlanet(selectedPlanet);
+  }, [planetName]);
+
+  const planetSelection = (name) => {
+    setPlanetName(name);
+  };
+
+  // !come back later
+  // const { description, distance, name, travel, images } = {
+  //   ...activePlanet[0]
+  // };
+  const { description, distance, name, travel, images } =
+    activePlanet.length > 0 ? activePlanet[0] : {};
+  const { png } = images ? images : {};
 
   return (
     <div className={Styles.destination}>
-      <h4 className={Styles.page_title}>
+      {/* <h4 className={Styles.page_title}>
         <span>01</span> PICK YOUR DESTINATION
-      </h4>
+      </h4> */}
+      <Title no='01' title='pick your destination'/>
 
       <div className={Styles.planet}>
-        <img src="" alt="" />
-        <section className={Styles.planet_selection}>
+        <img src={png ? png : ""} alt="PNG Image" />
+
+        <ul className={Styles.planet_list}>
           {destinations.map((planet) => {
             const { name } = planet;
-            return <h4 key={name}>{name.toUpperCase()}</h4>;
+
+            return (
+              <li
+                key={name}
+                onClick={() => planetSelection(name)}
+                className={planetName == name ? Styles.active : null}
+              >
+                {name.toUpperCase()}
+              </li>
+            );
           })}
+        </ul>
+
+        <section>
+          <h2>{name ? name.toUpperCase() : ""}</h2>
+          <p>{description ? description.toUpperCase() : ""}</p>
         </section>
 
-        {destinations.map((planet_desc) => {
-          const INFO = {
-            title: planet_desc.name,
-            description: planet_desc.description,
-          };
-          return (
-            <section className={Styles.planet_desc}>
-              <Article />
+        <section className={Styles.extra}>
+          <div>
+            <h4>AVG. DISTANCE</h4>
+            <h3>{distance ? distance.toUpperCase() : ""}</h3>
+          </div>
 
-              <section className={Styles.extra}>
-                <div>
-                  <h4>AVG. DISTANCE</h4>
-                  <h3>{planet_desc.distance}</h3>
-                </div>
-
-                <div>
-                  <h4>EST. TRAVEL TIME</h4>
-                </div>
-              </section>
-            </section>
-          );
-        })}
+          <div>
+            <h4>EST. TRAVEL TIME</h4>
+            <h3>{travel ? travel.toUpperCase() : ""}</h3>
+          </div>
+        </section>
       </div>
     </div>
   );

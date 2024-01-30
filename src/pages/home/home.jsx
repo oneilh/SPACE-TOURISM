@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import Styles from "./home.module.css";
 import backgroundImage from "../../assets/home/background-home-mobile.jpg";
-import Article from "../../components/Article/Article";
 import { BackgroundContext } from "../../context/MyContext";
 
 const Home = () => {
@@ -11,7 +10,7 @@ const Home = () => {
   const { setUrl } = useContext(BackgroundContext);
   useEffect(() => {
     setUrl(backgroundImage);
-  }, [backgroundImage]);
+  }, []);
 
   return (
     <div className={`${Styles.home}`}>
@@ -20,7 +19,7 @@ const Home = () => {
 
         <div className={Styles.sub__cont_1}>
           <h1>SPACE</h1>
-          <Article content={content} />
+          <p>{content}</p>
         </div>
       </section>
 
