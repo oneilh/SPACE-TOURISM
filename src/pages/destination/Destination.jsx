@@ -7,12 +7,26 @@ import Title from "../../components/Title";
 
 const Destination = () => {
   const { setUrl } = useContext(BackgroundContext);
-  const [planetName, setPlanetName] = useState("Moon");
-  const [activePlanet, setActivePlanet] = useState({});
+  const [planetName, setPlanetName] = useState(destinations[0].name);
+  const [activePlanet, setActivePlanet] = useState([]);
+
+  // !come back later
+  /* const { description, distance, name, travel, images } = {
+     ...activePlanet[0]
+   };*/
+  const { description, distance, name, travel, images } =
+    activePlanet.length > 0 ? activePlanet[0] : {};
+  const { png } = images ? images : {};
 
   useEffect(() => {
     setUrl(backgroundImage);
   }, []);
+
+  const planetSelection = (name) => {
+    if (planetName !== name) {
+      setPlanetName(name);
+    }
+  };
 
   useEffect(() => {
     const selectedPlanet = destinations.filter((desc) => {
@@ -22,24 +36,9 @@ const Destination = () => {
     setActivePlanet(selectedPlanet);
   }, [planetName]);
 
-  const planetSelection = (name) => {
-    setPlanetName(name);
-  };
-
-  // !come back later
-  // const { description, distance, name, travel, images } = {
-  //   ...activePlanet[0]
-  // };
-  const { description, distance, name, travel, images } =
-    activePlanet.length > 0 ? activePlanet[0] : {};
-  const { png } = images ? images : {};
-
   return (
-    <div className={Styles.destination}>
-      {/* <h4 className={Styles.page_title}>
-        <span>01</span> PICK YOUR DESTINATION
-      </h4> */}
-      <Title no='01' title='pick your destination'/>
+    <div className="page_container">
+      <Title no="01" title="pick your destination" />
 
       <div className={Styles.planet}>
         <img src={png ? png : ""} alt="PNG Image" />
@@ -52,7 +51,7 @@ const Destination = () => {
               <li
                 key={name}
                 onClick={() => planetSelection(name)}
-                className={planetName == name ? Styles.active : null}
+                className={planetName === name ? Styles.active : null}
               >
                 {name.toUpperCase()}
               </li>
@@ -65,7 +64,7 @@ const Destination = () => {
           <p>{description ? description.toUpperCase() : ""}</p>
         </section>
 
-        <section className={Styles.extra}>
+        <section className={`line ${Styles.extra}`}>
           <div>
             <h4>AVG. DISTANCE</h4>
             <h3>{distance ? distance.toUpperCase() : ""}</h3>

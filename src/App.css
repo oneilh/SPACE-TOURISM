@@ -5,7 +5,7 @@
   --color-2: #d0d6f9;
   --txt-heading: #fff;
   --txt-color: rgb(208, 220, 243);
-  --line-color: rgb(31, 31, 46);
+  --line-color: rgba(165, 164, 164, 0.288);
   --subheading-1: 28px;
   --subheading-2: 14px;
   --subheading-2__charSpace: 0.06cm;
@@ -84,7 +84,7 @@ nav {
 }
 
 span{
-  color: rgb(92, 91, 91);
+  color: rgb(143, 143, 143);
   margin-right: .7rem;
 }
 
@@ -108,4 +108,16 @@ span{
 
 .clickable {
   cursor: pointer;
+}
+
+.page_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-top: 2rem;
+}
+
+.line{
+  border-top: 1.5px solid var(--line-color);
 }
