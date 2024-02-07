@@ -1,16 +1,23 @@
 import { useContext, useEffect, useState } from "react";
-import { BackgroundContext } from "../../context/MyContext";
+import { appContext } from "../../context/appContext";
 import Styles from "./destination.module.css";
 import backgroundImage from "../../assets/destination/background-destination-mobile.jpg";
 import { destinations } from "../../data/db.json";
 import Title from "../../components/Title";
-import Button from "../../components/button";
+import Button from "../../components/btn/Button";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import HoverButton from "../../components/btn/HoverButton";
 
 const Destination = () => {
-  const { setUrl } = useContext(BackgroundContext);
+  const { dispatch } = useContext(appContext);
+
   const [planetName, setPlanetName] = useState(destinations[0].name);
   const [activePlanet, setActivePlanet] = useState([]);
+
+  useEffect(() => {
+    // setUrl(backgroundImage);
+    dispatch({ type: "bgUpdate", value: backgroundImage });
+  }, [backgroundImage]);
 
   // !come back later
   /* const { description, distance, name, travel, images } = {
@@ -19,10 +26,6 @@ const Destination = () => {
   const { description, distance, name, travel, images } =
     activePlanet.length > 0 ? activePlanet[0] : {};
   const { png } = images ? images : {};
-
-  useEffect(() => {
-    setUrl(backgroundImage);
-  }, []);
 
   const planetSelection = (name) => {
     if (planetName !== name) {
@@ -43,18 +46,10 @@ const Destination = () => {
       <Title no="01" title="pick your destination" />
 
       <div className={Styles.planet}>
-        <div className="img_container">
-          <div className="img_btn">
-            <Button alt_color>
-              <FaArrowLeft />
-            </Button>
-
-            <Button alt_color>
-              <FaArrowRight/>
-            </Button>
-          </div>
+        <section className="img_container">
+          <HoverButton />
           <img src={png ? png : ""} alt="PNG Image" />
-        </div>
+        </section>
 
         <ul className={Styles.planet_list}>
           {destinations.map((planet) => {

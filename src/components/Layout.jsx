@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Nav/Navbar";
-import { BackgroundContext } from "../context/MyContext";
+import { appContext } from "../context/appContext";
 
 const Layout = () => {
-  const { url } = useContext(BackgroundContext);
+  const { appState } = useContext(appContext);
   const STYLES = {
     backgroundImage: `url(
-          ${url}
+          ${appState.bgImage}
         )`,
   };
 

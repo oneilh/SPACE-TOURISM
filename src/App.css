@@ -158,9 +158,3 @@ span{
 .react-icons{
   color: rgba(206, 209, 252, 0.527);
 }
-.display_btn{
-  visibility: hidden;
-}
-.display_btn:hover{
-  visibility: visible;
-}
