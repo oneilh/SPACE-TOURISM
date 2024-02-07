@@ -121,3 +121,46 @@ span{
 .line{
   border-top: 1.5px solid var(--line-color);
 }
+.img_container{
+  display: flex;
+  justify-items: center;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+
+.img_btn{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.btn{
+  background-color: #3233358c;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  outline-offset: 2px;
+  line-height: 3;
+  /* outline: 1px solid red; */
+}
+.default{
+  border: 2px solid rgba(71, 70, 70, 0.404);
+  outline: 2px dashed rgba(171, 175, 196, 0.527);
+}
+.alt_btn{
+  border: 2px solid rgba(71, 70, 71, 0.404);
+  outline: 2px dashed rgba(171, 175, 196, 0.527);
+}
+.react-icons{
+  color: rgba(206, 209, 252, 0.527);
+}
+.display_btn{
+  visibility: hidden;
+}
+.display_btn:hover{
+  visibility: visible;
+}

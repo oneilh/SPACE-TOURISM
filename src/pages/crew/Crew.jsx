@@ -4,21 +4,18 @@ import backgroundImage from "../../assets/crew/background-crew-mobile.jpg";
 import Styles from "./crew.module.css";
 import Title from "../../components/Title";
 import { crew } from "../../data/db.json";
+import Button from "../../components/button";
+import { IconContext } from "react-icons";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Crew = () => {
   const { setUrl } = useContext(BackgroundContext);
   const [crewName, setCrewName] = useState(crew[0].name);
   const [activeCrew, setActiveCrew] = useState([]);
+  const [hoverStatus, setHoverStatus] = useState(false);
 
   //destructured
-  const {
-    crew_main,
-    active,
-    carousel,
-    item,
-    crew_container,
-    details_container,
-  } = Styles;
+  const { active, carousel, item, crew_container, details_container } = Styles;
   const { name, bio, images, role } =
     activeCrew.length > 0 ? activeCrew[0] : {};
 
@@ -40,12 +37,21 @@ const Crew = () => {
   }, [crewName]);
 
   return (
-    <div className='page_container'>
+    <div className="page_container">
       <Title no="02" title="meet your crew" />
       <div className={crew_container}>
-        <div className="img_container">
+        <section className="img_container">
+          <section className="img_btn">
+            <Button>
+              <FaArrowLeft />
+            </Button>
+
+            <Button>
+              <FaArrowRight />
+            </Button>
+          </section>
           <img src={images ? images.png : ""} alt="PNG image" />
-        </div>
+        </section>
 
         <div className={`line ${details_container}`}>
           <section className={carousel}>

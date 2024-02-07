@@ -4,6 +4,8 @@ import Styles from "./destination.module.css";
 import backgroundImage from "../../assets/destination/background-destination-mobile.jpg";
 import { destinations } from "../../data/db.json";
 import Title from "../../components/Title";
+import Button from "../../components/button";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Destination = () => {
   const { setUrl } = useContext(BackgroundContext);
@@ -41,7 +43,18 @@ const Destination = () => {
       <Title no="01" title="pick your destination" />
 
       <div className={Styles.planet}>
-        <img src={png ? png : ""} alt="PNG Image" />
+        <div className="img_container">
+          <div className="img_btn">
+            <Button alt_color>
+              <FaArrowLeft />
+            </Button>
+
+            <Button alt_color>
+              <FaArrowRight/>
+            </Button>
+          </div>
+          <img src={png ? png : ""} alt="PNG Image" />
+        </div>
 
         <ul className={Styles.planet_list}>
           {destinations.map((planet) => {
