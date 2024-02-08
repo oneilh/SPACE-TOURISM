@@ -45,7 +45,7 @@ const Crew = () => {
       <div className={crew_container}>
         <Img png={png} />
 
-        <section className={`line ${details_container}`}>
+        <section className="line details_container">
           <section className={img_tracker}>
             {crew.map((crew) => {
               const { name } = crew;

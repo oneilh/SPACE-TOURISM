@@ -45,11 +45,10 @@ const Destination = () => {
     <div className="page_container">
       <Title no="01" title="pick your destination" />
 
-      <div className={Styles.planet}>
-        {/* <section className="img_container">
-          <HoverButton />
-          <img src={png ? png : ""} alt="PNG Image" />
-        </section> */}
+      <div 
+      // className={Styles.planet}
+      className="details_container"
+      >
         <Img png={png} />
 
         <ul className={Styles.planet_list}>
