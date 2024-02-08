@@ -7,6 +7,7 @@ import Title from "../../components/Title";
 import Button from "../../components/btn/Button";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import HoverButton from "../../components/btn/HoverButton";
+import Img from "../../components/Img";
 
 const Destination = () => {
   const { dispatch } = useContext(appContext);
@@ -15,17 +16,8 @@ const Destination = () => {
   const [activePlanet, setActivePlanet] = useState([]);
 
   useEffect(() => {
-    // setUrl(backgroundImage);
     dispatch({ type: "bgUpdate", value: backgroundImage });
   }, [backgroundImage]);
-
-  // !come back later
-  /* const { description, distance, name, travel, images } = {
-     ...activePlanet[0]
-   };*/
-  const { description, distance, name, travel, images } =
-    activePlanet.length > 0 ? activePlanet[0] : {};
-  const { png } = images ? images : {};
 
   const planetSelection = (name) => {
     if (planetName !== name) {
@@ -41,15 +33,24 @@ const Destination = () => {
     setActivePlanet(selectedPlanet);
   }, [planetName]);
 
+  // !come back later
+  /* const { description, distance, name, travel, images } = {
+     ...activePlanet[0]
+   };*/
+  const { description, distance, name, travel, images } =
+    activePlanet.length > 0 ? activePlanet[0] : {};
+  const { png } = images ? images : {};
+
   return (
     <div className="page_container">
       <Title no="01" title="pick your destination" />
 
       <div className={Styles.planet}>
-        <section className="img_container">
+        {/* <section className="img_container">
           <HoverButton />
           <img src={png ? png : ""} alt="PNG Image" />
-        </section>
+        </section> */}
+        <Img png={png} />
 
         <ul className={Styles.planet_list}>
           {destinations.map((planet) => {

@@ -4,7 +4,7 @@ import backgroundImage from "../../assets/crew/background-crew-mobile.jpg";
 import Styles from "./crew.module.css";
 import Title from "../../components/Title";
 import { crew } from "../../data/db.json";
-import HoverButton from "../../components/btn/HoverButton";
+import Img from "../../components/Img";
 
 const Crew = () => {
   const { dispatch } = useContext(appContext);
@@ -31,24 +31,19 @@ const Crew = () => {
   }, [crewName]);
 
   //destructured values
-  const { active, img_tracker, item, crew_container, details_container } = Styles;
+  const { active, img_tracker, item, crew_container, details_container } =
+    Styles;
 
   const { name, bio, images, role } =
     activeCrew.length > 0 ? activeCrew[0] : {};
+  const { png } = images ? images : {};
 
   return (
     <div className="page_container">
       <Title no="02" title="meet your crew" />
 
       <div className={crew_container}>
-        <section
-          className="img_container"
-          onMouseOver={() => dispatch({ type: "hover", value: true })}
-          onMouseOut={() => dispatch({ type: "hover", value: false })}
-        >
-          <HoverButton />
-          <img src={images ? images.png : ""} alt="PNG image" />
-        </section>
+        <Img png={png} />
 
         <section className={`line ${details_container}`}>
           <section className={img_tracker}>
@@ -69,8 +64,10 @@ const Crew = () => {
             <h4>
               <span>{role ? role.toUpperCase() : ""}</span>
             </h4>
+
             <h3>{name ? name.toUpperCase() : ""}</h3>
           </section>
+
           <p>{bio}</p>
         </section>
       </div>
