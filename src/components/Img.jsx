@@ -11,7 +11,7 @@ const Img = ({png}) => {
       onMouseOut={() => dispatch({ type: "hover", value: false })}
     >
       <HoverButton />
-      <img src={png ? png : ""} alt="PNG image" />
+      <img src={png ? png : ""} alt="PNG image"/>
     </section>
   );
 };

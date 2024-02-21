@@ -1,0 +1,33 @@
+.img_container {
+  width: 100vw;
+}
+.img {
+  width: 101%;
+}
+
+.img_tacker_container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.img_tracker {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid grey;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_tracker:hover {
+    border: 1px solid white;
+}
+
+.active{
+    background-color: white;
+    color: black;
+}

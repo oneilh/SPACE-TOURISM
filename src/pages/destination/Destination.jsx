@@ -4,9 +4,6 @@ import Styles from "./destination.module.css";
 import backgroundImage from "../../assets/destination/background-destination-mobile.jpg";
 import { destinations } from "../../data/db.json";
 import Title from "../../components/Title";
-import Button from "../../components/btn/Button";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import HoverButton from "../../components/btn/HoverButton";
 import Img from "../../components/Img";
 
 const Destination = () => {
@@ -45,10 +42,7 @@ const Destination = () => {
     <div className="page_container">
       <Title no="01" title="pick your destination" />
 
-      <div 
-      // className={Styles.planet}
-      className="details_container"
-      >
+      <div className="details_container">
         <Img png={png} />
 
         <ul className={Styles.planet_list}>
@@ -73,13 +67,13 @@ const Destination = () => {
         </section>
 
         <section className={`line ${Styles.extra}`}>
-          <div>
-            <h4>AVG. DISTANCE</h4>
+          <div className="flex-vertical">
+            <h5>AVG. DISTANCE</h5>
             <h3>{distance ? distance.toUpperCase() : ""}</h3>
           </div>
 
-          <div>
-            <h4>EST. TRAVEL TIME</h4>
+          <div className="flex-vertical">
+            <h5>EST. TRAVEL TIME</h5>
             <h3>{travel ? travel.toUpperCase() : ""}</h3>
           </div>
         </section>

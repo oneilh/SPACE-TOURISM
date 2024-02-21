@@ -31,7 +31,7 @@ const Crew = () => {
   }, [crewName]);
 
   //destructured values
-  const { active, img_tracker, item, crew_container, details_container } =
+  const { active, img_tracker, item, crew_container } =
     Styles;
 
   const { name, bio, images, role } =
@@ -53,17 +53,17 @@ const Crew = () => {
               return (
                 <div
                   key={name}
-                  className={`${item} ${crewName === name ? active : null}`}
+                  className={`clickable ${item} ${crewName === name ? active : null}`}
                   onClick={() => handleCrew(name)}
                 ></div>
               );
             })}
           </section>
 
-          <section>
-            <h4>
+          <section className="content_heading">
+            <h5>
               <span>{role ? role.toUpperCase() : ""}</span>
-            </h4>
+            </h5>
 
             <h3>{name ? name.toUpperCase() : ""}</h3>
           </section>
