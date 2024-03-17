@@ -1,6 +1,7 @@
-export const intialState = {
+export const initialState = {
   bgImage: "",
   hoverStatus: false,
+  navBtn: false,
 };
 
 export const reducer = (state, action) => {
@@ -10,6 +11,8 @@ export const reducer = (state, action) => {
       return { ...state, bgImage: value };
     case "hover":
       return { ...state, hoverStatus: value };
+    case "btn":
+      return { ...state, navBtn: !state.navBtn};
   }
-  throw Error('Unknown action: ' + action.type);
+  throw Error("Unknown action: " + action.type);
 };

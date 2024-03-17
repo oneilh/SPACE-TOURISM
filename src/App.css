@@ -30,6 +30,7 @@ body {
   text-align: center;
   text-decoration: none;
   letter-spacing: 0.6px;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -184,4 +185,8 @@ span {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+section .active{
+  border-color: white;
 }

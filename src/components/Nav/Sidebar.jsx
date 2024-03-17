@@ -1,13 +1,23 @@
 import { IoClose } from "react-icons/io5";
 import Styles from "./navbar.module.css";
 import { IconContext } from "react-icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { appContext } from "../../context/appContext";
+import { closeNavBar } from "../../utils/closeNavBtn";
 
 const Sidebar = () => {
-  const { side_bar, close_container, close, nav_links, pg_no, link } = Styles;
+  const { appState, dispatch } = useContext(appContext);
+  const { navBtn } = appState;
+  const { side_bar, close_container, close, nav_links, shwSide } = Styles;
+
   return (
-    <div className={side_bar}>
-      <section className={close_container}>
+    <div className={`${side_bar} ${navBtn ? shwSide : ""}`}>
+      {console.log("Nav Btn => ", navBtn)}
+      <section
+        className={close_container}
+        onClick={() => closeNavBar(dispatch)}
+      >
         <IconContext.Provider
           value={{
             className: `react-icons clickable ${close}`,
@@ -16,27 +26,23 @@ const Sidebar = () => {
           <IoClose />
         </IconContext.Provider>
       </section>
+
       <section className={nav_links}>
-        <Link to='/' className={link}>
-          <h4 className={link}>
-            <span className={pg_no}>00</span> HOME
-          </h4>
-        </Link>
-        <Link to='/destination'className={link}>
-          <h4>
-            <span className={pg_no}>01</span> DESTINATION
-          </h4>
-        </Link>
-        <Link to='/crew'className={link}>
-          <h4>
-            <span className={pg_no}>02</span> CREW
-          </h4>
-        </Link>
-        <Link to='/technology' className={link}>
-          <h4>
-            <span className={pg_no}>03</span> TECHNOLOGY
-          </h4>
-        </Link>
+        <NavLink to="/" onClick={() => closeNavBar(dispatch)}>
+          <span>00</span> HOME
+        </NavLink>
+
+        <NavLink to="destination" onClick={() => closeNavBar(dispatch)}>
+          <span>01</span> DESTINATION
+        </NavLink>
+
+        <NavLink to="crew" onClick={() => closeNavBar(dispatch)}>
+          <span>02</span> CREW
+        </NavLink>
+
+        <NavLink to="technology" onClick={() => closeNavBar(dispatch)}>
+          <span>03</span> TECHNOLOGY
+        </NavLink>
       </section>
     </div>
   );

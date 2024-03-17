@@ -9,7 +9,7 @@ import Crew from "./pages/crew/Crew";
 import Technology from "./pages/technology/Technology";
 import { appContext } from "./context/appContext";
 import { useReducer } from "react";
-import { intialState, reducer } from "./utils/appState";
+import { initialState, reducer } from "./utils/appState";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [appState, dispatch] = useReducer(reducer, intialState);
+  const [appState, dispatch] = useReducer(reducer, initialState);
   return (
     <appContext.Provider value={{ appState, dispatch }}>
       <RouterProvider router={router} />

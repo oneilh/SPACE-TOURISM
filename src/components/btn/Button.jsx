@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
 import { IconContext } from "react-icons";
-import { appContext } from "../../context/appContext";
+
 
 const Button = ({ alt_color, children }) => {
 
