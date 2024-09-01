@@ -20,7 +20,7 @@
   width: 10rem;
   border-radius: 50%;
   background-color: var(--txt-heading);
-  color: var(--color-1);
+  color: var(--bg-color);
   line-height: 10rem;
   font-size: 30px;
   margin: 0 auto;

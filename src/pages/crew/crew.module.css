@@ -17,10 +17,10 @@
 }
 .item {
   background-color: var(--line-color);
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.8rem;
+  height: 0.8rem;
   border-radius: 50%;
 }
 .active {
-  background-color: var(--color-2);
+  background-color: var(--txt-heading);
 }

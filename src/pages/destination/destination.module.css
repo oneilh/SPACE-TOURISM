@@ -1,11 +1,11 @@
 .planet_list {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 1.5rem;
   cursor: pointer;
 }
 .active{
-    border-bottom: 3px solid var(--color-2);
+    border-bottom: 3px solid var(--txt-color);
     padding-bottom: 0.4rem; 
 }
 

@@ -1,14 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;900&family=Bellefair&display=swap");
 
 :root {
-  --color-1: #0b0d17;
-  --color-2: #d0d6f9;
-  --txt-heading: #fff;
-  --txt-color: rgb(208, 220, 243);
+  --bg-color: #0b0d17;
+  --txt-color: #d0d6f9;
+  --txt-heading: #ffffff;
+  /* --txt-color: rgb(208, 220, 243); */
   --line-color: rgba(165, 164, 164, 0.288);
-  --subheading-1: 28px;
-  --subheading-2: 14px;
-  --subheading-2__charSpace: 0.06cm;
+  --subheading-1__tablet: 24px;
+  --subheading-1__pc: 28px;
+  --subheading-2__tablet: 24px;
+  --subheading-2__pc: 28px;
+  --subheading__charSpace: 0.06cm;
   --nav-text: 16px;
   --nav-text__charSpace: 2.7px;
   --font-fam: "Bellefair", serif;
@@ -16,20 +18,18 @@
 
 html,
 body {
-  width: 100%;
-  min-height: 100dvh;
-  min-width: 100dvw;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
   outline: none;
   font-size: 16px;
+  font-weight: 400;
   font-family: "Barlow Condensed", sans-serif;
-  background-color: var(--color-1);
+  background-color: var(--bg-color);
   color: var(--txt-color);
   text-align: center;
   text-decoration: none;
-  letter-spacing: 0.6px;
+  letter-spacing: var(--subheading__charSpace);
   scroll-behavior: smooth;
 }
 
@@ -46,33 +46,17 @@ a {
 }
 
 h1 {
-  font-size: 110px;
-  font-family: "Bellefair", serif;
-  font-weight: 400;
-  color: var(--txt-heading);
+  font-size: 92px;
 }
 h2 {
-  font-size: 60px;
-  font-family: "Bellefair", serif;
-}
-h3 {
-  font-size: 30px;
-}
-h4 {
-  font-size: 18px;
-  letter-spacing: var(--subheading-2__charSpace);
-}
-h5 {
-  font-size: 15px;
-  letter-spacing: var(--subheading-2__charSpace);
+  font-size: 52px;
 }
 
 h1,
-h2,
-h3,
-h4,
-h5 {
+h2 {
   font-family: var(--font-fam);
+  font-weight: 900;
+  color: var(--txt-heading);
 }
 
 p {
@@ -83,11 +67,24 @@ p {
   letter-spacing: 1.5px;
   margin-top: 0.3rem;
 }
+.text-big {
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--txt-heading);
+  line-height: normal;
+}
+li {
+  font-weight: 300;
+  font-size: 16px;
+}
+li,
+.subheading {
+  color: var(--txt-heading);
+}
 
 img {
   display: block;
   width: 250px;
-  /* max-width: 100%; */
 }
 
 nav {
@@ -96,9 +93,22 @@ nav {
   margin-top: 2rem;
 }
 
-span {
-  color: rgb(143, 143, 143);
-  margin-right: 0.7rem;
+.dark-txt {
+  color: #5c5b5b;
+}
+
+/* ? background image */
+.bg-mobile__home {
+  background: url(./assets/home/background-home-mobile.jpg);
+}
+.bg-mobile__crew {
+  background: url(./assets/crew/background-crew-mobile.jpg);
+}
+.bg-mobile__destination {
+  background: url(./assets/destination/background-destination-mobile.jpg);
+}
+.bg-mobile__technology {
+  background: url(./assets/technology/background-technology-mobile.jpg);
 }
 
 .bg-image {
@@ -187,6 +197,38 @@ span {
   gap: 1rem;
 }
 
-section .active{
-  border-color: white;
+section .active {
+  border-color: var(--txt-color);
+}
+
+/* == Tablet */
+@media (max-width: 720px) {
+  .bg-tablet__home {
+    background: url(./assets/home/background-home-tablet.jpg);
+  }
+  .bg-tablet__crew {
+    background: url(./assets/crew/background-crew-tablet.jpg);
+  }
+  .bg-tablet__destination {
+    background: url(./assets/destination/background-destination-tablet.jpg);
+  }
+  .bg-tablet__technology {
+    background: url(./assets/technology/background-technology-tablet.jpg);
+  }
+}
+
+/* ==Pc */
+@media (max-width: 1024px) {
+  .bg-pc__home {
+    background: url(./assets/home/background-home-desktop.jpg);
+  }
+  .bg-pc__crew {
+    background: url(./assets/crew/background-crew-desktop.jpg);
+  }
+  .bg-pc__destination {
+    background: url(./assets/destination/background-destination-desktop.jpg);
+  }
+  .bg-pc__technology {
+    background: url(./assets/technology/background-technology-desktop.jpg);
+  }
 }

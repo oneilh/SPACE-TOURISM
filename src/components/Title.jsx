@@ -1,8 +1,14 @@
-const Title = ({no, title}) => {
+const Title = ({ no, title }) => {
   return (
-    <h4 className='page_title'>
-      <span>{no}</span> {title.toUpperCase()}
-    </h4>
+    <p className="subheading">
+      <span
+        className="dark-txt"
+        style={{ fontWeight: "900", marginRight: "0.7rem" }}
+      >
+        {no}
+      </span>{" "}
+      {title.toUpperCase()}
+    </p>
   );
 };
 

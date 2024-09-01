@@ -65,11 +65,11 @@ const Technology = () => {
         </section>
 
         <section className="content_heading">
-          <h5>
+          <p>
             <span>{name ? HEADING.toUpperCase() : ""}</span>
-          </h5>
+          </p>
 
-          <h3>{name ? name.toUpperCase() : ""}</h3>
+          <h2>{name ? name.toUpperCase() : ""}</h2>
         </section>
 
         <p>{description}</p>

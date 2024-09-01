@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 4rem;
   height: 100%;
-  background-color: rgba(25, 26, 36, 0.329);
+  background-color: rgba(25, 26, 36, 0.514);
   backdrop-filter: blur(25px);
   position: fixed;
   top: 0;
@@ -40,8 +40,9 @@
   border-color: transparent;
   padding: 0.5rem;
   text-align: left;
-  color: white;
+  color: var(--txt-heading);
 }
 .nav_links span {
-  color: white;
+  color: var(--txt-heading);
+  font-weight: 900;
 }

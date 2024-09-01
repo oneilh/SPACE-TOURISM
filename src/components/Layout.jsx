@@ -13,12 +13,10 @@ const Layout = () => {
   };
 
   return (
-    <div className="bg-image" style={STYLES}>
-      <div className="container">
-        <Navbar />
-        <Sidebar/>
-        <Outlet />
-      </div>
+    <div className="container bg-image" style={STYLES}>
+      <Navbar />
+      <Sidebar />
+      <Outlet />
     </div>
   );
 };

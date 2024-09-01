@@ -30,10 +30,7 @@ const Destination = () => {
     setActivePlanet(selectedPlanet);
   }, [planetName]);
 
-  // !come back later
-  /* const { description, distance, name, travel, images } = {
-     ...activePlanet[0]
-   };*/
+  //==destructured properties
   const { description, distance, name, travel, images } =
     activePlanet.length > 0 ? activePlanet[0] : {};
   const { png } = images ? images : {};
@@ -68,13 +65,13 @@ const Destination = () => {
 
         <section className={`line ${Styles.extra}`}>
           <div className="flex-vertical">
-            <h5>AVG. DISTANCE</h5>
-            <h3>{distance ? distance.toUpperCase() : ""}</h3>
+            <p>AVG. DISTANCE</p>
+            <p className="text-big">{distance ? distance.toUpperCase() : ""}</p>
           </div>
 
           <div className="flex-vertical">
-            <h5>EST. TRAVEL TIME</h5>
-            <h3>{travel ? travel.toUpperCase() : ""}</h3>
+            <p>EST. TRAVEL TIME</p>
+            <p className="text-big">{travel ? travel.toUpperCase() : ""}</p>
           </div>
         </section>
       </div>
