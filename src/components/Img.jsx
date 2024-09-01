@@ -1,17 +1,7 @@
-import { useContext } from "react";
-import { appContext } from "../context/appContext";
-import HoverButton from "./btn/HoverButton";
-
-const Img = ({png}) => {
-  const { dispatch } = useContext(appContext);
+const Img = ({ png }) => {
   return (
-    <section
-      className="img_container"
-      onMouseOver={() => dispatch({ type: "hover", value: true })}
-      onMouseOut={() => dispatch({ type: "hover", value: false })}
-    >
-      <HoverButton />
-      <img src={png ? png : ""} alt="PNG image"/>
+    <section className="img_container">
+      <img src={png ? png : ""} alt="PNG image" />
     </section>
   );
 };

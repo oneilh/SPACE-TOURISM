@@ -12,7 +12,7 @@
 .extra {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding: 2.5rem 0;
+  gap: 2rem;
+  padding: 2rem 0;
   width: 100%;
 }

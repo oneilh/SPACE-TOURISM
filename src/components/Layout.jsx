@@ -6,17 +6,14 @@ import Sidebar from "./Nav/Sidebar";
 
 const Layout = () => {
   const { appState } = useContext(appContext);
-  const STYLES = {
-    backgroundImage: `url(
-          ${appState.bgImage}
-        )`,
-  };
 
   return (
-    <div className="container bg-image" style={STYLES}>
-      <Navbar />
-      <Sidebar />
-      <Outlet />
+    <div className={`bg-image bg-${appState.bgImage}`}>
+      <div className="container">
+        <Navbar />
+        <Sidebar />
+        <Outlet />
+      </div>
     </div>
   );
 };

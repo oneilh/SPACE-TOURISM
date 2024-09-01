@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { appContext } from "../../context/appContext";
-import backgroundImage from "../../assets/crew/background-crew-mobile.jpg";
 import Styles from "./crew.module.css";
 import Title from "../../components/Title";
 import { crew } from "../../data/db.json";
@@ -12,10 +11,11 @@ const Crew = () => {
   const [crewName, setCrewName] = useState(crew[0].name);
   const [activeCrew, setActiveCrew] = useState([]);
 
-  //bgImage initialize
+  //==bgImage initialize
   useEffect(() => {
-    dispatch({ type: "bgUpdate", value: backgroundImage });
-  }, [backgroundImage]);
+    dispatch({ type: "BG_CREW", value: "crew" });
+  }, []);
+
 
   const handleCrew = (name) => {
     if (crewName !== name) {
@@ -23,6 +23,7 @@ const Crew = () => {
     }
   };
 
+  
   useEffect(() => {
     const crewDetails = crew.filter((crw) => {
       return crw.name == crewName;

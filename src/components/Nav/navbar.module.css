@@ -30,10 +30,10 @@
   text-align: left;
   padding-left: 1.5rem;
   justify-content: center;
+  letter-spacing: var(--nav-text__charSpace);
 }
 
 .nav_links > * {
-  font-size: 20px;
   border: 0;
   border-right: 4px;
   border-style: solid;

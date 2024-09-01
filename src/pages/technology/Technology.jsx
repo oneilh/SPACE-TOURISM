@@ -1,10 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { appContext } from "../../context/appContext";
-import backgroundImage from "../../assets/technology/background-technology-mobile.jpg";
 import Styles from "./technology.module.css";
 import { technology } from "../../data/db.json";
 import Title from "../../components/Title";
-import Img from "../../components/Img";
 
 const Technology = () => {
   const { dispatch } = useContext(appContext);
@@ -14,7 +12,7 @@ const Technology = () => {
 
   //bgImage initialize
   useEffect(() => {
-    dispatch({ type: "bgUpdate", value: backgroundImage });
+    dispatch({ type: "BG_TECHNOLOGY", value: 'technology' });
   }, []);
 
   const handleTech = (name) => {

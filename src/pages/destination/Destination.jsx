@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { appContext } from "../../context/appContext";
 import Styles from "./destination.module.css";
-import backgroundImage from "../../assets/destination/background-destination-mobile.jpg";
 import { destinations } from "../../data/db.json";
 import Title from "../../components/Title";
 import Img from "../../components/Img";
@@ -13,8 +12,8 @@ const Destination = () => {
   const [activePlanet, setActivePlanet] = useState([]);
 
   useEffect(() => {
-    dispatch({ type: "bgUpdate", value: backgroundImage });
-  }, [backgroundImage]);
+    dispatch({ type: "BG_DESTINATION", value: "desitination" });
+  }, []);
 
   const planetSelection = (name) => {
     if (planetName !== name) {
