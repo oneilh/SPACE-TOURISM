@@ -11,8 +11,9 @@ const Destination = () => {
   const [planetName, setPlanetName] = useState(destinations[0].name);
   const [activePlanet, setActivePlanet] = useState([]);
 
+  //bg
   useEffect(() => {
-    dispatch({ type: "BG_DESTINATION", value: "desitination" });
+    dispatch({ type: "BG_DESTINATION", value: "destination" });
   }, []);
 
   const planetSelection = (name) => {
@@ -29,7 +30,8 @@ const Destination = () => {
     setActivePlanet(selectedPlanet);
   }, [planetName]);
 
-  //==destructured properties
+
+  //?destructured properties
   const { description, distance, name, travel, images } =
     activePlanet.length > 0 ? activePlanet[0] : {};
   const { png } = images ? images : {};
@@ -59,16 +61,16 @@ const Destination = () => {
 
         <section>
           <h2>{name ? name.toUpperCase() : ""}</h2>
-          <p>{description ? description.toUpperCase() : ""}</p>
+          <p>{description ? description : ""}</p>
         </section>
 
         <section className={`line ${Styles.extra}`}>
-          <div className="flex-vertical">
+          <div className={Styles.facts}>
             <p>AVG. DISTANCE</p>
             <p className="text-big">{distance ? distance.toUpperCase() : ""}</p>
           </div>
 
-          <div className="flex-vertical">
+          <div className={Styles.facts}>
             <p>EST. TRAVEL TIME</p>
             <p className="text-big">{travel ? travel.toUpperCase() : ""}</p>
           </div>

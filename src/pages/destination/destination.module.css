@@ -4,9 +4,9 @@
   gap: 1.5rem;
   cursor: pointer;
 }
-.active{
-    border-bottom: 3px solid var(--txt-color);
-    padding-bottom: 0.4rem; 
+.active {
+  border-bottom: 3px solid var(--txt-color);
+  padding-bottom: 0.4rem;
 }
 
 .extra {
@@ -15,4 +15,10 @@
   gap: 2rem;
   padding: 2rem 0;
   width: 100%;
+}
+
+.facts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

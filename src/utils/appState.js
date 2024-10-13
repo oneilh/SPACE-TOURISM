@@ -1,6 +1,6 @@
 export const initialState = {
   bgImage: "home",
-  navBtn: true,
+  navBtn: false,
 };
 
 export const reducer = (state, action) => {
@@ -15,7 +15,7 @@ export const reducer = (state, action) => {
     case "BG_TECHNOLOGY":
       return { ...state, bgImage: value };
     case "BTN":
-      return { ...state, navBtn: !state.navBtn};
+      return { ...state, navBtn: !state.navBtn };
   }
   throw Error("Unknown action: " + action.type);
 };

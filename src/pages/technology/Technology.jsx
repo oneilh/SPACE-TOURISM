@@ -44,7 +44,7 @@ const Technology = () => {
         <img src={landscape} className={img} />
       </section>
 
-      <section className="details_container">
+      <section className={`details_container`}>
         <section className={img_tacker_container}>
           {technology.map((tech, index) => {
             const { name } = tech;

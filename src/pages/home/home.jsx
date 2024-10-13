@@ -23,7 +23,6 @@ const Home = () => {
           <p>{content}</p>
         </div>
       </section>
-
       <div className={Styles.explore}>EXPLORE</div>
     </main>
   );
