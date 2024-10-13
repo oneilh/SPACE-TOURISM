@@ -64,7 +64,6 @@ img {
 }
 .bg-home {
   background: url(./assets/home/background-home-mobile.jpg);
-  height: 100dvh !important;
 }
 .bg-crew {
   background: url(./assets/crew/background-crew-mobile.jpg);
@@ -225,5 +224,12 @@ section .active {
   }
   .bg-image {
     background-size: cover;
+  }
+
+  h1{
+    text-align: left;
+  }
+  .container{
+    width: 80%;
   }
 }
