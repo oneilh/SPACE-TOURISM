@@ -5,3 +5,4 @@ This project is a collaborative challenge from Frontend Mentor, Scrimba, and Kev
 - React -> Frontend Framework for javascript
 - useReducer and useContext -> global statement
 - css modules -> scoped styling
+- react router -> routing between pages
