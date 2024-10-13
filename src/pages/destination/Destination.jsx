@@ -30,50 +30,53 @@ const Destination = () => {
     setActivePlanet(selectedPlanet);
   }, [planetName]);
 
-
   //?destructured properties
   const { description, distance, name, travel, images } =
     activePlanet.length > 0 ? activePlanet[0] : {};
   const { png } = images ? images : {};
 
   return (
-    <div className="page_container">
+    <div className={`page_container ${Styles.destination}`}>
       <Title no="01" title="pick your destination" />
 
-      <div className="details_container">
+      <div className={`details_container ${Styles.item}`}>
         <Img png={png} />
 
-        <ul className={Styles.planet_list}>
-          {destinations.map((planet) => {
-            const { name } = planet;
+        <section className={Styles.item_container}>
+          <ul className={Styles.planet_list}>
+            {destinations.map((planet) => {
+              const { name } = planet;
 
-            return (
-              <li
-                key={name}
-                onClick={() => planetSelection(name)}
-                className={planetName === name ? Styles.active : null}
-              >
-                {name.toUpperCase()}
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li
+                  key={name}
+                  onClick={() => planetSelection(name)}
+                  className={planetName === name ? Styles.active : null}
+                >
+                  {name.toUpperCase()}
+                </li>
+              );
+            })}
+          </ul>
 
-        <section>
-          <h2>{name ? name.toUpperCase() : ""}</h2>
-          <p>{description ? description : ""}</p>
-        </section>
+          <section className={Styles.content}>
+            <h2>{name ? name.toUpperCase() : ""}</h2>
+            <p>{description ? description : ""}</p>
+          </section>
 
-        <section className={`line ${Styles.extra}`}>
-          <div className={Styles.facts}>
-            <p>AVG. DISTANCE</p>
-            <p className="text-big">{distance ? distance.toUpperCase() : ""}</p>
-          </div>
+          <section className={`line ${Styles.extra}`}>
+            <div className={Styles.facts}>
+              <p>AVG. DISTANCE</p>
+              <p className="text-big">
+                {distance ? distance.toUpperCase() : ""}
+              </p>
+            </div>
 
-          <div className={Styles.facts}>
-            <p>EST. TRAVEL TIME</p>
-            <p className="text-big">{travel ? travel.toUpperCase() : ""}</p>
-          </div>
+            <div className={Styles.facts}>
+              <p>EST. TRAVEL TIME</p>
+              <p className="text-big">{travel ? travel.toUpperCase() : ""}</p>
+            </div>
+          </section>
         </section>
       </div>
     </div>
