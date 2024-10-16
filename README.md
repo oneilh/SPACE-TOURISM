@@ -3,6 +3,10 @@ This project is a collaborative challenge from Frontend Mentor, Scrimba, and Kev
 
 ## Tech Stack
 - React -> Frontend Framework for javascript
-- useReducer and useContext -> global statement
+- useReducer and useContext -> global state management
 - css modules -> scoped styling
 - react router -> routing between pages
+
+## Assets and Resources
+- [Space Tourism project at frontendmentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
+- [quick visit to the space tourism design file](https://www.figma.com/design/fCiWPkxDaZaUE3txN6mWIX/space-tourism-website?node-id=0-1&node-type=canvas&t=klupQ5gE1osQvDt6-0)
