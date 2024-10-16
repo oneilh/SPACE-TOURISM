@@ -112,8 +112,9 @@ li {
   font-size: 16px;
 }
 li,
-.subheading {
+.title {
   color: var(--txt-heading);
+  background-color: red;
 }
 
 nav {
@@ -232,7 +233,7 @@ section .active {
   .container{
     width: 80%;
   }
-  .subheading{
+  .title{
     font-size: 20px;
   }
 }

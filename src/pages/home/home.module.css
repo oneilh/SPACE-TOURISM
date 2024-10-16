@@ -1,4 +1,4 @@
-.home {
+.homePage_container{
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   flex-direction: column;
   gap: 1.5rem;
 }
-.sub__cont_1 {
+.info {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
