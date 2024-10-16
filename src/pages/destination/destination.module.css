@@ -4,18 +4,18 @@
   gap: 1.5rem;
   cursor: pointer;
 }
-.active {
+.active_selection {
   border-bottom: 3px solid var(--txt-color);
   padding-bottom: 0.4rem;
 }
 
-.content {
+.planet {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2.5rem 0;
 }
-.extra {
+.planet_info {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -31,25 +31,25 @@
 
 /* ==Pc */
 @media screen and (min-width: 1024px) {
-  .destination {
+  .destinationPage_container {
     padding-top: 2rem;
   }
-  .item {
+  .body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10rem;
   }
-  .destination p {
+  .destinationPage_container p {
     text-align: left;
     align-self: self-start;
   }
-  .destination img {
+  .destinationPage_container img {
     width: 100%;
     object-fit: contain;
     scale: 0.9;
   }
 
-  .item_container {
+  .body_item2 {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -57,22 +57,22 @@
   .planet_list {
     justify-content: start;
   }
-  .destination h2 {
+  .destinationPage_container h2 {
     text-align: left;
     font-size: 81px;
   }
-  .content {
+  .planet {
     padding: 0;
   }
 
-  .extra {
+  .planet_info {
     flex-direction: row;
     justify-content: space-between;
   }
-  .extra p:nth-child(1) {
+  .planet_info p:nth-child(1) {
     font-size: 16px;
   }
-  .extra p:nth-child(2) {
+  .planet_info p:nth-child(2) {
     font-size: 32px;
   }
 }

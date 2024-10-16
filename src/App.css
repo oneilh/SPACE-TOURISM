@@ -114,7 +114,6 @@ li {
 li,
 .title {
   color: var(--txt-heading);
-  background-color: red;
 }
 
 nav {
