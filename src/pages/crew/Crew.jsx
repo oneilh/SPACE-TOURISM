@@ -16,14 +16,12 @@ const Crew = () => {
     dispatch({ type: "BG_CREW", value: "crew" });
   }, []);
 
-
-  const handleCrew = (name) => {
+  const showCrew = (name) => {
     if (crewName !== name) {
       setCrewName(name);
     }
   };
 
-  
   useEffect(() => {
     const crewDetails = crew.filter((crw) => {
       return crw.name == crewName;
@@ -32,20 +30,35 @@ const Crew = () => {
   }, [crewName]);
 
   //destructured values
-  const { active, img_tracker, item, crew_container } = Styles;
+  const {
+    crewPageContainer,
+    title,
+    crew_img,
+    img_tracker,
+    img_tracker__inactive,
+    img_tracker__active,
+    body,
+    body_item2,
+    crewInfo,
+    crewTitle,
+  } = Styles;
 
   const { name, bio, images, role } =
     activeCrew.length > 0 ? activeCrew[0] : {};
   const { png } = images ? images : {};
 
   return (
-    <div className="page_container">
-      <Title no="02" title="meet your crew" />
+    <div className={`page_container ${crewPageContainer}`}>
+      <div className={`${title}`}>
+        <Title no="02" title="meet your crew" />
+      </div>
 
-      <div className={crew_container}>
-        <Img png={png} />
+      <div className={body}>
+        <section className={crew_img}>
+          <Img png={png} />
+        </section>
 
-        <section className="line details_container">
+        <section className={`line details_container ${body_item2}`}>
           <section className={img_tracker}>
             {crew.map((crew) => {
               const { name } = crew;
@@ -53,24 +66,26 @@ const Crew = () => {
               return (
                 <div
                   key={name}
-                  className={`clickable ${item} ${
-                    crewName === name ? active : null
+                  className={`clickable ${img_tracker__inactive} ${
+                    crewName === name ? img_tracker__active : null
                   }`}
-                  onClick={() => handleCrew(name)}
+                  onClick={() => showCrew(name)}
                 ></div>
               );
             })}
           </section>
 
-          <section className="content_heading">
-            <p className="dark-txt">
-              <span>{role ? role.toUpperCase() : ""}</span>
-            </p>
+          <section className={crewInfo}>
+            <section className={`content_heading`}>
+              <p className={`dark-txt  ${crewTitle}`}>
+                <span>{role ? role.toUpperCase() : ""}</span>
+              </p>
 
-            <p className="text-big">{name ? name.toUpperCase() : ""}</p>
+              <p className={`text-big`}>{name ? name.toUpperCase() : ""}</p>
+            </section>
+
+            <p>{bio}</p>
           </section>
-
-          <p>{bio}</p>
         </section>
       </div>
     </div>

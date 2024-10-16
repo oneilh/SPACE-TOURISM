@@ -1,10 +1,10 @@
-.crew_container {
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.crew_container img {
+.body img {
   height: 300px;
   width: auto;
 }
@@ -15,12 +15,62 @@
   gap: 1rem;
   margin-top: 1.5rem;
 }
-.item {
+.img_tracker__inactive {
   background-color: var(--line-color);
   width: 0.8rem;
   height: 0.8rem;
   border-radius: 50%;
 }
-.active {
+.img_tracker__active {
   background-color: var(--txt-heading);
+}
+.crewInfo{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ==Pc */
+@media screen and (min-width: 1024px) {
+  .crewPageContainer{
+    padding-top: 2rem;
+  }
+  .crewPageContainer p {
+    text-align: left;
+  }
+
+  .title {
+    align-self: flex-start;
+    grid-column: 2;
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .body img {
+    width: 100%;
+    object-fit: contain;
+    height: 60vh;
+  }
+  .crew_img {
+    order: 1;
+  }
+  .body_item2 {
+    border: none;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    height: 100%;
+    padding-top: 4rem;
+  }
+
+
+  .crewInfo p{
+    width: 80%;
+  }
+  .crewTitle{
+    font-size: 20px;
+  }
 }

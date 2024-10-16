@@ -232,4 +232,7 @@ section .active {
   .container{
     width: 80%;
   }
+  .subheading{
+    font-size: 20px;
+  }
 }
