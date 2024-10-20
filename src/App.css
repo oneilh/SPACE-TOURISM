@@ -186,7 +186,7 @@ section .active {
   }
 
   .container {
-    width: 70%;
+    width: 90%;
   }
 
   nav {
@@ -207,6 +207,10 @@ section .active {
     height: 2px;
     width: 100%;
   }
+
+ .page_title {
+  align-self: self-start;
+ }
 }
 
 /* ==Pc */

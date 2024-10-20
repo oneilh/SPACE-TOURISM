@@ -48,7 +48,9 @@ const Technology = () => {
 
   return (
     <div className={`page_container ${technologyPage_container}`}>
-      <Title no="03" title="space launch 101" />
+      <div className="page_title">
+        <Title no="03" title="space launch 101" />
+      </div>
       <img src={landscape} className={technology_img__sm} />
       <section className={body}>
         <section className={`details_container ${body_item1}`}>
