@@ -208,9 +208,9 @@ section .active {
     width: 100%;
   }
 
- .page_title {
-  align-self: self-start;
- }
+  .page_title {
+    align-self: self-start;
+  }
 }
 
 /* ==Pc */
@@ -231,17 +231,17 @@ section .active {
     background-size: cover;
   }
 
-  h1{
+  h1 {
     text-align: left;
   }
-  .container{
+  .container {
     width: 80%;
   }
-  .container_technology{
+  .container_technology {
     width: 90%;
-   margin-right: 0;
+    margin-right: 0;
   }
-  .title{
+  .title {
     font-size: 20px;
   }
 }
