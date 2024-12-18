@@ -211,6 +211,9 @@ section .active {
   .page_title {
     align-self: self-start;
   }
+  .title{
+    align-self: flex-start;
+  }
 }
 
 /* ==tablet */

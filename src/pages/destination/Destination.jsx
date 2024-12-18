@@ -43,11 +43,13 @@ const Destination = () => {
     planet_list,
     planet,
     planet_info,
-    facts
+    facts,
   } = Styles;
   return (
     <div className={`page_container ${destinationPage_container}`}>
-      <Title no="01" title="pick your destination"/>
+      <div className="page_title">
+        <Title no="01" title="pick your destination" />
+      </div>
 
       <div className={`details_container ${body}`}>
         <Img png={png} />

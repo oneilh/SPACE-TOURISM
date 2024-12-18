@@ -49,7 +49,7 @@ const Crew = () => {
 
   return (
     <div className={`page_container ${crewPageContainer}`}>
-      <div className={`${title}`}>
+      <div className={`${title} title`}>
         <Title no="02" title="meet your crew" />
       </div>
 
