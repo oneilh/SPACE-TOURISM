@@ -28,12 +28,26 @@
   flex-direction: column;
   gap: 1rem;
 }
-
+/* == Tablet */
+@media screen and (min-width: 720px) {
+  .destinationPage_container {
+    margin-top: 2rem;
+    gap: 4rem;
+  }
+  .destinationPage_container > p {
+    align-self: flex-start;
+  }
+  .planet_info {
+    flex-direction: row;
+    justify-content: center;
+    gap: 6rem;
+  }
+}
 /* ==Pc */
 @media screen and (min-width: 1024px) {
-  .destinationPage_container {
+  /* .destinationPage_container {
     padding-top: 2rem;
-  }
+  } */
   .body {
     display: grid;
     grid-template-columns: 1fr 1fr;

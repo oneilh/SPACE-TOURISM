@@ -49,6 +49,7 @@
   font-weight: 900;
 }
 
+/* == medium and larger */
 @media only screen and (min-width: 720px) {
   .shwSide {
     display: none;
@@ -60,9 +61,9 @@
     background-color: rgba(25, 26, 36, 0.514);
     backdrop-filter: blur(50px);
     gap: 2rem;
-    padding: 0 2rem 0 0.5rem;
+    padding: 0 2rem 0 1rem;
   }
- 
+
   .nav_links > * {
     border: 0;
     border-bottom: 4px;
@@ -71,5 +72,16 @@
     padding: 2.5rem 0;
     text-align: left;
     color: var(--txt-heading);
+  }
+  .nav_links span {
+    color: var(--txt-heading);
+    font-weight: 900;
+  }
+  .nav_links span {
+    color: var(--txt-heading);
+    font-weight: 900;
+  }
+  .nav_links span {
+    display: none;
   }
 }

@@ -213,6 +213,21 @@ section .active {
   }
 }
 
+/* ==tablet */
+@media screen and (min-width: 720px) and (max-width: 1023.5px){
+  nav{
+    padding-top: 0;
+    display: flex;
+  }
+  .nav-line{
+    display: none;
+  }
+  .nav_itm2{
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ==Pc */
 @media screen and (min-width: 1024px) {
   .bg-home {

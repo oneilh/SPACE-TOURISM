@@ -97,4 +97,7 @@
   .content {
     width: 80%;
   }
+  .content > p {
+    width: 100%;
+  }
 }
