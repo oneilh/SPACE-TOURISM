@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import LogoIcon from "../assets/shared/logo.svg?react";
-import HamburgerIcon from "../assets/shared/hamburger.svg?react";
+import LogoIcon from "/assets/shared/logo.svg?react";
+import HamburgerIcon from "/assets/shared/hamburger.svg?react";
 import { sideBarToggle } from "../utils/sideBarToggle";
 import { appContext } from "../context/appContext";
 import { useContext } from "react";
