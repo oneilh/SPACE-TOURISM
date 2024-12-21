@@ -63,16 +63,16 @@ img {
   width: 250px;
 }
 .bg-home {
-  background: url(./assets/home/background-home-mobile.jpg);
+  background: url(/assets/home/background-home-mobile.jpg);
 }
 .bg-crew {
-  background: url(./assets/crew/background-crew-mobile.jpg);
+  background: url(/assets/crew/background-crew-mobile.jpg);
 }
 .bg-destination {
-  background: url(./assets/destination/background-destination-mobile.jpg);
+  background: url(/assets/destination/background-destination-mobile.jpg);
 }
 .bg-technology {
-  background: url(./assets/technology/background-technology-mobile.jpg);
+  background: url(/assets/technology/background-technology-mobile.jpg);
 }
 .bg-image {
   background-repeat: no-repeat no-repeat;
@@ -169,17 +169,17 @@ section .active {
 /* == Tablet */
 @media screen and (min-width: 720px) {
   .bg-home {
-    background: url(./assets/home/background-home-tablet.jpg);
+    background: url(/assets/home/background-home-tablet.jpg);
     min-height: 100dvh;
   }
   .bg-crew {
-    background: url(./assets/crew/background-crew-tablet.jpg);
+    background: url(/assets/crew/background-crew-tablet.jpg);
   }
   .bg-destination {
-    background: url(./assets/destination/background-destination-tablet.jpg);
+    background: url(/assets/destination/background-destination-tablet.jpg);
   }
   .bg-technology {
-    background: url(./assets/technology/background-technology-tablet.jpg);
+    background: url(/assets/technology/background-technology-tablet.jpg);
   }
   .bg-image {
     background-size: cover;
@@ -234,16 +234,16 @@ section .active {
 /* ==Pc */
 @media screen and (min-width: 1024px) {
   .bg-home {
-    background: url(./assets/home/background-home-desktop.jpg);
+    background: url(/assets/home/background-home-desktop.jpg);
   }
   .bg-crew {
-    background: url(./assets/crew/background-crew-desktop.jpg);
+    background: url(/assets/crew/background-crew-desktop.jpg);
   }
   .bg-destination {
-    background: url(./assets/destination/background-destination-desktop.jpg);
+    background: url(/assets/destination/background-destination-desktop.jpg);
   }
   .bg-technology {
-    background: url(./assets/technology/background-technology-desktop.jpg);
+    background: url(/assets/technology/background-technology-desktop.jpg);
   }
   .bg-image {
     background-size: cover;
